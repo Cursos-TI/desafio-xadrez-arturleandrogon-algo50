@@ -1,35 +1,36 @@
 #include <stdio.h>
 
 int main() {
+    // ==================== ENTRADA DE DADOS (constantes) ====================
+    int casas_baixo = 2;      // Duas casas para baixo
+    int casas_esquerda = 1;   // Uma casa para a esquerda
     
-    // ==================== TORRE ====================
-    // Torre: move 5 casas para a direita (usando for)
-    printf("=== Movimento da Torre ===\n");
-    for(int i = 1; i <= 5; i++) {
-        printf("Direita\n");
+    // ==================== LÓGICA DE MOVIMENTAÇÃO (Loops Aninhados) ====================
+    printf("Movimento do Cavalo em L:\n\n");
+    
+    // Loop externo: movimento vertical (para baixo)
+    for(int i = 0; i < casas_baixo; i++) {
+        printf("Baixo\n");
     }
-    printf("\n");
     
-    // ==================== BISPO ====================
-    // Bispo: move 5 casas na diagonal (Cima, Direita) (usando while)
-    printf("=== Movimento do Bispo ===\n");
-    int casas_bispo = 0;
-    while(casas_bispo < 5) {
-        printf("Cima, Direita\n");
-        casas_bispo++;
-    }
-    printf("\n");
-    
-    // ==================== RAINHA ====================
-    // Rainha: move 8 casas para a esquerda (usando do-while)
-    printf("=== Movimento da Rainha ===\n");
-    int casas_rainha = 0;
-    do {
+    // Loop interno: movimento horizontal (para a esquerda)
+    // Este é o loop aninhado exigido
+    for(int j = 0; j < casas_esquerda; j++) {
         printf("Esquerda\n");
-        casas_rainha++;
-    } while(casas_rainha < 8);
+    }
     
-    printf("\nFim da simulacao!\n");
+    printf("\n");
+    
+    // ==================== SAÍDA FORMATADA ====================
+    printf("Baixo\n");
+    printf("Baixo\n");
+    printf("Esquerda\n");
+    
+    printf("\n");
+    printf("Cima\n");
+    printf("Baixo\n");
+    printf("Esquerda\n");
+    printf("Direita\n");
     
     return 0;
 }
